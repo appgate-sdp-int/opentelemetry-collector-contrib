@@ -10,6 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/servicediscovery/types"
 	"go.opentelemetry.io/collector/config/configoptional"
 	"go.opentelemetry.io/collector/config/configretry"
+	"go.opentelemetry.io/collector/config/configspa"
 	"go.opentelemetry.io/collector/exporter/exporterhelper"
 	"go.opentelemetry.io/collector/exporter/otlpexporter"
 )
@@ -56,6 +57,14 @@ type Config struct {
 	// Keys are encoded as "name=value|name=value|" in the order configured. Missing attributes are encoded as "name=|".
 	// Non-string values are deterministically stringified.
 	RoutingAttributes []string `mapstructure:"routing_attributes"`
+
+	// SPAPerEndpoint maps a resolved backend endpoint to a per-endpoint SPA config.
+	// When set for an endpoint, it overrides Protocol.OTLP.ClientConfig.SPA for the
+	// sub-exporter created for that backend. Keys are matched after the same
+	// host:port normalization the load balancer applies to resolver output.
+	// Intended for cases (typically the static resolver) where each backend has its
+	// own PSK; DNS/k8s/aws deployments usually share one PSK via protocol.otlp.spa.
+	SPAPerEndpoint map[string]*configspa.Config `mapstructure:"spa_per_endpoint,omitempty"`
 }
 
 // Validate checks if the exporter configuration is valid.
@@ -67,6 +76,26 @@ func (c *Config) Validate() error {
 
 	if c.RoutingKey != attrRoutingStr && len(c.RoutingAttributes) > 0 {
 		return fmt.Errorf("routing_attributes can only be used when routing_key is %q; got %q. Remove routing_attributes or set routing_key to %q", attrRoutingStr, c.RoutingKey, attrRoutingStr)
+	}
+
+	// Normalize spa_per_endpoint keys with the same host:port rule the load
+	// balancer applies to resolver output, and validate each SPA entry.
+	if len(c.SPAPerEndpoint) > 0 {
+		normalized := make(map[string]*configspa.Config, len(c.SPAPerEndpoint))
+		for endpoint, spa := range c.SPAPerEndpoint {
+			if spa == nil {
+				return fmt.Errorf("spa_per_endpoint: entry for %q must not be null", endpoint)
+			}
+			if err := spa.Validate(); err != nil {
+				return fmt.Errorf("spa_per_endpoint[%q]: %w", endpoint, err)
+			}
+			key := endpointWithPort(endpoint)
+			if _, dup := normalized[key]; dup {
+				return fmt.Errorf("spa_per_endpoint: duplicate entry for endpoint %q after host:port normalization", key)
+			}
+			normalized[key] = spa
+		}
+		c.SPAPerEndpoint = normalized
 	}
 
 	return nil
