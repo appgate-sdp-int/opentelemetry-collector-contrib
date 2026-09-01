@@ -32,7 +32,7 @@ require (
 	go.opentelemetry.io/collector/exporter/xexporter v0.159.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/collector/featuregate v1.65.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/collector/pdata v1.65.1-0.20260827211935-bdb5c072803c
-	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.70.0
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.71.0
 	go.opentelemetry.io/otel v1.46.0
 	go.opentelemetry.io/otel/metric v1.46.0
 	go.opentelemetry.io/otel/sdk v1.46.0
