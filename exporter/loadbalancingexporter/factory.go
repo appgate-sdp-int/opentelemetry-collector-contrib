@@ -56,6 +56,9 @@ func createDefaultConfig() component.Config {
 func buildExporterConfig(cfg *Config, endpoint string) otlpexporter.Config {
 	oCfg := cfg.Protocol.OTLP
 	oCfg.ClientConfig.Endpoint = endpoint
+	if spa, ok := cfg.SPAPerEndpoint[endpoint]; ok {
+		oCfg.ClientConfig.SPA = spa
+	}
 
 	return oCfg
 }
