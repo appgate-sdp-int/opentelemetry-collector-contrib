@@ -5,7 +5,7 @@ go 1.26.0
 require (
 	github.com/coreos/go-oidc/v3 v3.20.0
 	github.com/fsnotify/fsnotify v1.10.1
-	github.com/go-jose/go-jose/v4 v4.1.4
+	github.com/go-jose/go-jose/v4 v4.1.5
 	github.com/stretchr/testify v1.12.1
 	go.opentelemetry.io/collector/client v1.65.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/collector/component v1.65.1-0.20260827211935-bdb5c072803c
