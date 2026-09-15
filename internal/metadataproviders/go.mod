@@ -8,8 +8,8 @@ require (
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.38
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.322.0
 	github.com/hashicorp/consul/api v1.33.4
-	github.com/moby/moby/api v1.55.0
-	github.com/moby/moby/client v0.5.1
+	github.com/moby/moby/api v1.56.0
+	github.com/moby/moby/client v0.6.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig v0.159.0
 	github.com/shirou/gopsutil/v4 v4.26.7
 	github.com/stretchr/testify v1.12.1
