@@ -11,8 +11,8 @@ require (
 	go.opentelemetry.io/collector/pdata v1.65.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/collector/pdata/pprofile v0.159.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/otel v1.46.0
-	go.opentelemetry.io/proto/otlp v1.11.0
-	go.opentelemetry.io/proto/otlp/profiles/v1development v0.4.0
+	go.opentelemetry.io/proto/otlp v1.11.1
+	go.opentelemetry.io/proto/otlp/profiles/v1development v0.4.1
 	google.golang.org/protobuf v1.36.12
 )
 
@@ -26,5 +26,5 @@ require (
 	go.opentelemetry.io/collector/featuregate v1.65.1-0.20260827211935-bdb5c072803c // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
-	golang.org/x/sys v0.47.0 // indirect
+	golang.org/x/sys v0.48.0 // indirect
 )
