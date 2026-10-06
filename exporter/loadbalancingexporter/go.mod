@@ -6,7 +6,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/config v1.32.38
 	github.com/aws/aws-sdk-go-v2/service/servicediscovery v1.43.7
 	github.com/aws/smithy-go v1.27.9
-	github.com/goccy/go-json v0.10.6
+	github.com/goccy/go-json v0.11.2
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics v0.159.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchpersignal v0.159.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden v0.159.0
