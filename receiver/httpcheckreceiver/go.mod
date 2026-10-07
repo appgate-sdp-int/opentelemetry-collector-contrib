@@ -7,7 +7,7 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden v0.159.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest v0.159.0
 	github.com/stretchr/testify v1.12.1
-	github.com/tidwall/gjson v1.19.0
+	github.com/tidwall/gjson v1.20.0
 	go.opentelemetry.io/collector/component v1.65.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/collector/component/componenttest v0.159.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/collector/config/confighttp v0.159.1-0.20260827211935-bdb5c072803c
