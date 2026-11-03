@@ -125,7 +125,7 @@ require (
 	github.com/modern-go/reflect2 v1.0.3-0.20250322232337-35a7c28c31ee // indirect
 	github.com/pierrec/lz4/v4 v4.1.29 // indirect
 	github.com/rs/cors v1.11.1 // indirect
-	gitlab.com/gitlab-org/api/client-go/v2 v2.58.2
+	gitlab.com/gitlab-org/api/client-go/v2 v2.64.0
 	go.opentelemetry.io/collector/client v1.65.1-0.20260827211935-bdb5c072803c // indirect
 	go.opentelemetry.io/collector/component/componentstatus v0.159.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/collector/config/configauth v1.65.1-0.20260827211935-bdb5c072803c // indirect
