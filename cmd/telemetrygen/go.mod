@@ -5,7 +5,7 @@ go 1.26.0
 require (
 	github.com/lightstep/go-expohisto v1.0.0
 	github.com/spf13/cobra v1.10.2
-	github.com/spf13/pflag v1.0.10
+	github.com/spf13/pflag v1.1.0
 	github.com/stretchr/testify v1.12.1
 	go.opentelemetry.io/collector/pdata v1.65.1-0.20260827211935-bdb5c072803c
 	go.opentelemetry.io/otel v1.46.0
