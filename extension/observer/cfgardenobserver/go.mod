@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	code.cloudfoundry.org/garden v0.0.0-20241023020423-a21e43a17f84
-	github.com/cloudfoundry/go-cfclient/v3 v3.0.0-beta.1
+	github.com/cloudfoundry/go-cfclient/v3 v3.0.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer v0.159.0
 	github.com/stretchr/testify v1.12.1
 	go.opentelemetry.io/collector/component v1.65.1-0.20260827211935-bdb5c072803c
@@ -56,7 +56,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.46.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
-	golang.org/x/oauth2 v0.36.0 // indirect
+	golang.org/x/oauth2 v0.38.0 // indirect
 	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/tools v0.47.0 // indirect
 )
